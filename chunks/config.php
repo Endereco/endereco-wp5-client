@@ -28,11 +28,11 @@
         window.EnderecoIntegrator.themeName = '<?php echo get_option('stylesheet'); ?>';
         window.EnderecoIntegrator.defaultCountrySelect = false; // Feature "Preselect country"
         window.EnderecoIntegrator.config.agentName = '<?php echo ENDERECO_CLIENT_NAME .' v' . ENDERECO_CLIENT_VERSION; ?>';
-        window.EnderecoIntegrator.config.apiUrl = '<?php echo plugin_dir_url(  dirname(__DIR__) . '/io.php' ) . 'io.php'; ?>';
+        window.EnderecoIntegrator.config.apiUrl = atob('<?php echo base64_encode(plugin_dir_url(  dirname(__DIR__) . '/io.php' ) . 'io.php'); ?>');
         window.EnderecoIntegrator.config.apiKey = '<?php echo get_option('ewp5c_api_key'); ?>'; // Hier kommt Dein API Key.
         window.EnderecoIntegrator.config.showDebugInfo = !!('<?php echo get_option('ewp5c_show_debug'); ?>');
         window.EnderecoIntegrator.config.splitStreet = false;
-        window.EnderecoIntegrator.config.remoteApiUrl = '<?php echo get_option('ewp5c_api_endpoint_url'); ?>';
+        window.EnderecoIntegrator.config.remoteApiUrl = atob('<?php echo base64_encode(get_option('ewp5c_api_endpoint_url')); ?>');
         window.EnderecoIntegrator.config.trigger.onblur = !!('<?php echo get_option('ewp5c_trigger_on_blur'); ?>');
         window.EnderecoIntegrator.config.trigger.onsubmit = !!('<?php echo get_option('ewp5c_trigger_on_submit'); ?>');
         window.EnderecoIntegrator.config.ux.smartFill = !!('<?php echo get_option('ewp5c_allow_smart_autocomplete'); ?>');;
@@ -102,41 +102,5 @@
             callback();
         });
     }
-</script>
-
-<script>
-    enderecoInitAMS({
-        countryCode: '[name="billing_country"]',
-        postalCode: '[name="billing_postcode"]',
-        locality: '[name="billing_city"]',
-        streetFull: '[name="billing_address_1"]',
-        streetName: '',
-        buildingNumber: '',
-        additionalInfo: '[name="billing_address_2"]',
-        addressStatus: '',
-        addressTimestamp: '',
-        addressPredictions: '',
-    }, {
-        name: 'billing_address',
-        addressType: 'billing_address'
-    });
-</script>
-
-<script>
-    enderecoInitAMS({
-        countryCode: '[name="shipping_country"]',
-        postalCode: '[name="shipping_postcode"]',
-        locality: '[name="shipping_city"]',
-        streetFull: '[name="shipping_address_1"]',
-        streetName: '',
-        buildingNumber: '',
-        additionalInfo: '[name="shipping_address_2"]',
-        addressStatus: '',
-        addressTimestamp: '',
-        addressPredictions: '',
-    }, {
-        name: 'shipping_address',
-        addressType: 'shipping_address'
-    });
 </script>
 

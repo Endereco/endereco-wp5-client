@@ -14,10 +14,13 @@ define('ENDERECO_CLIENT_VERSION', '0.0.2');
 define('ENDERECO_CLIENT_NAME', 'Endereco WordPress5 Client');
 
 function ewp5c_add_bundle_to_footer() {
+    // Get whitelistet page id's.
+
     // Display only in checkout or address pages.
     if (
         function_exists( 'is_checkout' ) && is_checkout() ||
-        function_exists( 'is_wc_endpoint_url' ) && is_wc_endpoint_url( 'edit-address' ) && !empty($_GET['edit-address'])
+        function_exists( 'is_wc_endpoint_url' ) && is_wc_endpoint_url( 'edit-address' ) && !empty($_GET['edit-address']) ||
+        ewp5c_is_whitelisted_page()
     ) {
         $url = plugin_dir_url( __FILE__ ) . 'assets/js/endereco.min.js';
         include 'chunks/bundle.php';
@@ -27,16 +30,34 @@ function ewp5c_add_bundle_to_footer() {
 add_action( 'wp_footer', 'ewp5c_add_bundle_to_footer' );
 
 function ewp5c_add_config_to_header() {
+    // Get whitelisted page id's
+
     // Display only in checkout or address pages.
     if (
         function_exists( 'is_checkout' ) && is_checkout() ||
-        function_exists( 'is_wc_endpoint_url' ) && is_wc_endpoint_url( 'edit-address' ) && !empty($_GET['edit-address'])
+        function_exists( 'is_wc_endpoint_url' ) && is_wc_endpoint_url( 'edit-address' ) && !empty($_GET['edit-address']) ||
+        ewp5c_is_whitelisted_page()
     ) {
         include 'chunks/config.php';
     }
 
+    if (
+        function_exists( 'is_checkout' ) && is_checkout() ||
+        function_exists( 'is_wc_endpoint_url' ) && is_wc_endpoint_url( 'edit-address' ) && !empty($_GET['edit-address'])
+    ) {
+        include 'chunks/defaultInitAms.php';
+    }
+
 }
 add_action( 'wp_head', 'ewp5c_add_config_to_header' );
+
+function ewp5c_is_whitelisted_page() {
+    global $post;
+    $post_id = $post->ID;
+    $whitelist = array_map('intval', explode(',', get_option('ewp5c_whitelisted_pages')));
+
+    return in_array($post_id, $whitelist);
+}
 
 function ewp5c_change_fields_order(  $fields ) {
     $fields['country']['priority'] = 40;
@@ -108,6 +129,10 @@ function ewp5c_register_settings() {
     // Resume submit after the addresscheck.
     add_option( 'ewp5c_resume_after_submit', '1');
     register_setting( 'ewp5c_options_group', 'ewp5c_resume_after_submit' );
+
+    // Resume submit after the addresscheck.
+    add_option( 'ewp5c_whitelisted_pages', '');
+    register_setting( 'ewp5c_options_group', 'ewp5c_whitelisted_pages' );
 
     // Show debug infos.
     add_option( 'ewp5c_show_debug', '0');
