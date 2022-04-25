@@ -58,6 +58,22 @@ $connection = ewp5c_connection_works();
 			</tr>
 		</table>
 
+        <h3><?php _e('Name-Services Konfiguration', 'endereco-wp5-client'); ?></h3>
+        <table class="form-table">
+            <tr valign="top">
+                <th scope="row"><label for="ewp5c_activate_ps"><?php _e('Namensprüfung aktivieren', 'endereco-wp5-client'); ?></label></th>
+                <td><input type="checkbox" id="ewp5c_activate_ps" name="ewp5c_activate_ps" value="1" <?php if (1 === intval(get_option('ewp5c_activate_ps'))) : ?>checked <?php endif; ?>" /></td>
+            </tr>
+        </table>
+
+        <h3><?php _e('Email-Services Konfiguration', 'endereco-wp5-client'); ?></h3>
+        <table class="form-table">
+            <tr valign="top">
+                <th scope="row"><label for="ewp5c_activate_es"><?php _e('EMailprüfung aktivieren', 'endereco-wp5-client'); ?></label></th>
+                <td><input type="checkbox" id="ewp5c_activate_es" name="ewp5c_activate_es" value="1" <?php if (1 === intval(get_option('ewp5c_activate_es'))) : ?>checked <?php endif; ?>" /></td>
+            </tr>
+        </table>
+
 		<h3><?php _e('Designanpassungen'); ?></h3>
 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec arcu enim, ullamcorper sed pellentesque at, euismod quis sapien. Etiam in ornare tortor, imperdiet mollis dolor. Sed imperdiet libero ac mattis sollicitudin. Praesent malesuada erat leo, ut pellentesque odio sollicitudin id.</p>
 		<table class="form-table">
