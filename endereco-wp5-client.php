@@ -114,6 +114,22 @@ function ewp5c_register_settings() {
     add_option( 'ewp5c_activate_ps', '1');
     register_setting( 'ewp5c_options_group', 'ewp5c_activate_ps' );
 
+    // Activate PS EX.
+    add_option( 'ewp5c_activate_ps_ex', '1');
+    register_setting( 'ewp5c_options_group', 'ewp5c_activate_ps_ex' );
+
+    // Activate PhS.
+    add_option( 'ewp5c_activate_phs', '1');
+    register_setting( 'ewp5c_options_group', 'ewp5c_activate_phs' );
+
+    // Activate PhS status
+    add_option( 'ewp5c_activate_phs_status', '1');
+    register_setting( 'ewp5c_options_group', 'ewp5c_activate_phs_status' );
+
+    // Activate PhS format
+    add_option( 'ewp5c_activate_phs_phone_format', '1');
+    register_setting( 'ewp5c_options_group', 'ewp5c_activate_phs_phone_format' );
+
     // Use default css.
     add_option( 'ewp5c_use_standard_css', '1');
     register_setting( 'ewp5c_options_group', 'ewp5c_use_standard_css' );

@@ -43,6 +43,9 @@
         window.EnderecoIntegrator.config.ux.allowCloseModal = !!('<?php echo get_option('ewp5c_allow_close_modal'); ?>');
         window.EnderecoIntegrator.config.ux.confirmWithCheckbox = !!('<?php echo get_option('ewp5c_allow_demand_address_confirmation'); ?>');
         window.EnderecoIntegrator.config.ux.changeFieldsOrder = true;
+        window.EnderecoIntegrator.config.ux.showPhoneErrors = !!('<?php echo get_option('ewp5c_activate_phs_status'); ?>');
+        window.EnderecoIntegrator.config.phoneFormat = ('<?php echo get_option('ewp5c_activate_phs_phone_format'); ?>');
+        window.EnderecoIntegrator.config.ux.correctTranspositionedNames = ('<?php echo get_option('ewp5c_activate_ps_ex'); ?>');
         window.EnderecoIntegrator.countryMappingUrl = '';
         window.EnderecoIntegrator.config.templates.primaryButtonClasses = 'button alt';
         window.EnderecoIntegrator.config.templates.secondaryButtonClasses = 'button';
@@ -74,13 +77,21 @@
                 street_name_needs_correction: '<?php _e('Die Schreibweise der Straße ist fehlerhaft.', 'endereco-wp5-client'); ?>',
                 locality_needs_correction: '<?php _e('Die Schreibweise des Ortes ist fehlerhaft.', 'endereco-wp5-client'); ?>',
                 postal_code_needs_correction: '<?php _e('Die PLZ ist ungültig.', 'endereco-wp5-client'); ?>',
-                country_code_needs_correction: '<?php _e('Die eingegebene Adresse wurde in einem anderen Land gefunden.', 'endereco-wp5-client'); ?>'
+                country_code_needs_correction: '<?php _e('Die eingegebene Adresse wurde in einem anderen Land gefunden.', 'endereco-wp5-client'); ?>',
+                phone_invalid: '<?php _e('Die Rufnummer ist ungültig.', 'endereco-wp5-client'); ?>',
+                phone_format_needs_correction: '<?php _e('Die Rufnummer ist falsch formatiert.', 'endereco-wp5-client'); ?>'
+            },
+            requiredFormat: {
+                E164: '<?php _e('Bitte schreiben Sie die Nummer im E.164 Format, z.B. +4917678134170', 'endereco-wp5-client'); ?>',
+                INTERNATIONAL: '<?php _e('Bitte schreiben Sie die Nummer im internationalen Format, z.B. +49 176 78134170', 'endereco-wp5-client'); ?>',
+                NATIONAL: '<?php _e('Bitte schreiben Sie die Nummer im nationalen Format, z.B. 0176 78134170', 'endereco-wp5-client'); ?>'
             }
         };
         window.EnderecoIntegrator.activeServices = {
             ams: !!('<?php echo get_option('ewp5c_activate_ams'); ?>'),
             emailService: !!('<?php echo get_option('ewp5c_activate_es'); ?>'),
-            personService: !!('<?php echo get_option('ewp5c_activate_ps'); ?>')
+            personService: !!('<?php echo get_option('ewp5c_activate_ps'); ?>'),
+            phs: !!('<?php echo get_option('ewp5c_activate_phs'); ?>')
         }
 
         // Country matching functions.

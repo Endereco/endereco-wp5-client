@@ -64,6 +64,33 @@ $connection = ewp5c_connection_works();
                 <th scope="row"><label for="ewp5c_activate_ps"><?php _e('Namensprüfung aktivieren', 'endereco-wp5-client'); ?></label></th>
                 <td><input type="checkbox" id="ewp5c_activate_ps" name="ewp5c_activate_ps" value="1" <?php if (1 === intval(get_option('ewp5c_activate_ps'))) : ?>checked <?php endif; ?>" /></td>
             </tr>
+            <tr valign="top">
+                <th scope="row"><label for="ewp5c_activate_ps_ex"><?php _e('Vertauschten Vor- und Nachnamen korrigieren (BETA)', 'endereco-wp5-client'); ?></label></th>
+                <td><input type="checkbox" id="ewp5c_activate_ps_ex" name="ewp5c_activate_ps_ex" value="1" <?php if (1 === intval(get_option('ewp5c_activate_ps_ex'))) : ?>checked <?php endif; ?>" /></td>
+            </tr>
+        </table>
+
+        <h3><?php _e('Rufnummernprüfung-Services Konfiguration', 'endereco-wp5-client'); ?></h3>
+        <table class="form-table">
+            <tr valign="top">
+                <th scope="row"><label for="ewp5c_activate_phs"><?php _e('Rufnummernprüfung aktivieren', 'endereco-wp5-client'); ?></label></th>
+                <td><input type="checkbox" id="ewp5c_activate_phs" name="ewp5c_activate_phs" value="1" <?php if (1 === intval(get_option('ewp5c_activate_phs'))) : ?>checked <?php endif; ?>" /></td>
+            </tr>
+            <tr valign="top">
+                <th scope="row"><label for="ewp5c_activate_phs_status"><?php _e('Rufnummer Statusmeldungen anzeigen', 'endereco-wp5-client'); ?></label></th>
+                <td><input type="checkbox" id="ewp5c_activate_phs_status" name="ewp5c_activate_phs_status" value="1" <?php if (1 === intval(get_option('ewp5c_activate_phs_status'))) : ?>checked <?php endif; ?>" /></td>
+            </tr>
+            <tr valign="top">
+                <th scope="row"><label for="ewp5c_activate_phs_status"><?php _e('Folgendes Format wird erwartet', 'endereco-wp5-client'); ?></label></th>
+                <td>
+                    <select name='ewp5c_activate_phs_phone_format'>
+                        <option value='' <?=get_option("ewp5c_activate_phs_phone_format") == '' ? ' selected="selected"' : '';?>>Alles zulassen</option>
+                        <option value='E164'  <?=get_option("ewp5c_activate_phs_phone_format") == 'E164' ? ' selected="selected"' : '';?>>E.164 (+4912345678901)</option>
+                        <option value='INTERNATIONAL'  <?=get_option("ewp5c_activate_phs_phone_format") == 'INTERNATIONAL' ? ' selected="selected"' : '';?>>International (+49 1234 5678901)</option>
+                        <option value='NATIONAL'  <?=get_option("ewp5c_activate_phs_phone_format") == 'NATIONAL' ? ' selected="selected"' : '';?>>National (01234 5678901)</option>
+                    </select>
+                </td>
+            </tr>
         </table>
 
         <h3><?php _e('Email-Services Konfiguration', 'endereco-wp5-client'); ?></h3>
