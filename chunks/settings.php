@@ -17,7 +17,6 @@ $connection = ewp5c_connection_works();
     <form method="post" action="options.php">
         <?php settings_fields( 'ewp5c_options_group' ); ?>
         <h3><?php _e('Zugangsdaten', 'endereco-wp5-client'); ?></h3>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec arcu enim, ullamcorper sed pellentesque at, euismod quis sapien. Etiam in ornare tortor, imperdiet mollis dolor. Sed imperdiet libero ac mattis sollicitudin. Praesent malesuada erat leo, ut pellentesque odio sollicitudin id.</p>
         <table class="form-table">
             <tr>
                 <th scope="row"><label for="ewp5c_api_key"><?php _e('API Schlüssel', 'endereco-wp5-client'); ?></label></th>
@@ -38,7 +37,6 @@ $connection = ewp5c_connection_works();
         </table>
 
 		<h3><?php _e('Adress-Services Konfiguration', 'endereco-wp5-client'); ?></h3>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec arcu enim, ullamcorper sed pellentesque at, euismod quis sapien. Etiam in ornare tortor, imperdiet mollis dolor. Sed imperdiet libero ac mattis sollicitudin. Praesent malesuada erat leo, ut pellentesque odio sollicitudin id.</p>
 		<table class="form-table">
 			<tr valign="top">
 				<th scope="row"><label for="ewp5c_activate_ams"><?php _e('Adressprüfung und Eingabe-Assistent aktivieren', 'endereco-wp5-client'); ?></label></th>
@@ -102,7 +100,6 @@ $connection = ewp5c_connection_works();
         </table>
 
 		<h3><?php _e('Designanpassungen'); ?></h3>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec arcu enim, ullamcorper sed pellentesque at, euismod quis sapien. Etiam in ornare tortor, imperdiet mollis dolor. Sed imperdiet libero ac mattis sollicitudin. Praesent malesuada erat leo, ut pellentesque odio sollicitudin id.</p>
 		<table class="form-table">
 			<tr>
 				<th scope="row"><label for="ewp5c_use_standard_css"><?php _e('Standard-CSS nutzen', 'endereco-wp5-client'); ?></label></th>
@@ -111,7 +108,6 @@ $connection = ewp5c_connection_works();
 		</table>
 
 		<h3><?php _e('Entwicklereinstellungen'); ?></h3>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec arcu enim, ullamcorper sed pellentesque at, euismod quis sapien. Etiam in ornare tortor, imperdiet mollis dolor. Sed imperdiet libero ac mattis sollicitudin. Praesent malesuada erat leo, ut pellentesque odio sollicitudin id.</p>
 		<table class="form-table">
 			<tr>
 				<th scope="row"><label for="ewp5c_trigger_on_submit"><?php _e('Adressprüfung beim Absenden des Formulars auslösen', 'endereco-wp5-client'); ?></label></th>
