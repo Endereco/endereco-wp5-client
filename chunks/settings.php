@@ -97,6 +97,10 @@ $connection = ewp5c_connection_works();
                 <th scope="row"><label for="ewp5c_activate_es"><?php _e('EMailprüfung aktivieren', 'endereco-wp5-client'); ?></label></th>
                 <td><input type="checkbox" id="ewp5c_activate_es" name="ewp5c_activate_es" value="1" <?php if (1 === intval(get_option('ewp5c_activate_es'))) : ?>checked <?php endif; ?>" /></td>
             </tr>
+            <tr valign="top">
+                <th scope="row"><label for="ewp5c_show_es_statuses"><?php _e('E-Mail Statusmeldungen anzeigen', 'endereco-wp5-client'); ?></label></th>
+                <td><input type="checkbox" id="ewp5c_show_es_statuses" name="ewp5c_show_es_statuses" value="1" <?php if (1 === intval(get_option('ewp5c_show_es_statuses'))) : ?>checked <?php endif; ?>" /></td>
+            </tr>
         </table>
 
 		<h3><?php _e('Designanpassungen'); ?></h3>
