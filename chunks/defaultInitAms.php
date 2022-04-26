@@ -14,6 +14,7 @@
         addressStatus: '',
         addressTimestamp: '',
         addressPredictions: '',
+        subdivisionCode: '[name="billing_state"]',
     }, {
         name: 'billing_address',
         addressType: 'billing_address'
@@ -32,6 +33,7 @@
         addressStatus: '',
         addressTimestamp: '',
         addressPredictions: '',
+        subdivisionCode: '[name="shipping_state"]',
     }, {
         name: 'shipping_address',
         addressType: 'shipping_address'
