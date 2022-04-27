@@ -23,6 +23,42 @@
         }
     }
 
+    // Hilfsfunktion. Damit lässt sich initAMS aufrufen, auch wenn die funktion noch nicht initiert ist.
+    // Bessere Art und Weise wäre ein Proxy Objekt.
+    function enderecoInitPersonServces(prefix, config) {
+        if (undefined !== window.EnderecoIntegrator.initPersonServices) {
+            window.EnderecoIntegrator.initPersonServices(prefix, config);
+        } else {
+            window.EnderecoIntegrator.onLoad.push(function () {
+                window.EnderecoIntegrator.initPersonServices(prefix, config);
+            });
+        }
+    }
+
+    // Hilfsfunktion. Damit lässt sich initAMS aufrufen, auch wenn die funktion noch nicht initiert ist.
+    // Bessere Art und Weise wäre ein Proxy Objekt.
+    function enderecoInitEmailServices(prefix, config) {
+        if (undefined !== window.EnderecoIntegrator.initEmailServices) {
+            window.EnderecoIntegrator.initEmailServices(prefix, config);
+        } else {
+            window.EnderecoIntegrator.onLoad.push(function () {
+                window.EnderecoIntegrator.initEmailServices(prefix, config);
+            });
+        }
+    }
+
+    // Hilfsfunktion. Damit lässt sich initAMS aufrufen, auch wenn die funktion noch nicht initiert ist.
+    // Bessere Art und Weise wäre ein Proxy Objekt.
+    function enderecoInitPhoneServices(prefix, config) {
+        if (undefined !== window.EnderecoIntegrator.initPhoneServices) {
+            window.EnderecoIntegrator.initPhoneServices(prefix, config);
+        } else {
+            window.EnderecoIntegrator.onLoad.push(function () {
+                window.EnderecoIntegrator.initPhoneServices(prefix, config);
+            });
+        }
+    }
+
     function enderecoLoadAMSConfig() {
         window.EnderecoIntegrator.defaultCountry = 'DE';
         window.EnderecoIntegrator.themeName = '<?php echo get_option('stylesheet'); ?>';
