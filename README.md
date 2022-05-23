@@ -10,7 +10,7 @@ Die Installation erfolgt in folgenden Schritten:
 
 ## Konfiguration des Moduls
 
-Als Erstes wird ein API-Key benötigt, um das Modul nutzen zu können. Diesen kann man [hier](www.endereco.de) beantragen
+Als Erstes wird ein API-Key benötigt, um das Modul nutzen zu können. Diesen kann man [hier](https://www.endereco.de) beantragen
 
 ### Adress-Services Konfiguration
 
