@@ -12,6 +12,10 @@ Die Installation erfolgt in folgenden Schritten:
 
 Als Erstes wird ein API-Key benötigt, um das Modul nutzen zu können. Diesen kann man [hier](https://www.endereco.de) beantragen
 
+### Endereco AMS auf folgenden Seiten einbauen. Id's kommagetrennt
+Hier müssen die Seitenids auf denen Endereco aktiv sein soll eingetragen werden, mit einem Komma getrennt (z. B. "8,9").
+</br>Diese ids findet man in der Url, sobald man diese Adresse bearbeitet. (z. B. post=2 → Seitenid: 2)
+
 ### Adress-Services Konfiguration
 
 Hier kann man die Adressprüfung, Eingabe-Assistent und SmartAutocomplete aktivieren oder deaktivieren. Der SmartAutocomplete übernimmt automatisch den Vorschlag von Eingabe-Assistenten, wenn es nur einen Vorschlag gibt.
@@ -43,10 +47,6 @@ Wenn aktiv wird die Adresse sofort geprüft, sobald die Adressfelder verlassen w
 
 #### Das Absenden des Formulars nach der Adressauswahl fortsetzen
 Wenn aktiv wird nach der Adressprüfung das Formular abgeschickt. Wenn es deaktiviert ist kann der User nochmal alle Daten in Ruhe anschauen und muss das Formular nochmal abschicken
-
-#### Endereco AMS auf folgenden Seiten einbauen. Id's kommagetrennt
-Hier müssen die Seitenids auf denen Endereco aktiv sein soll eingetragen werden, mit einem Komma getrennt (z. B. "8,9"). 
-</br>Diese ids findet man in der Url, sobald man diese Adresse bearbeitet. (z. B. post=2 → Seitenid: 2)
 
 #### Debuginformationen in der Browserkonsole ausgeben
 Dabei werden zusätzlich Informationen in der Konsole ausgegeben
