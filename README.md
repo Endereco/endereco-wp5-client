@@ -11,9 +11,9 @@ Compatible to
   Installation: 
   1. Download the endereco-wp5-client Zip file and upload the module to your wordpress installation 
   https://github.com/Endereco/endereco-wp5-client/releases/latest/
-  2. Install the module
-  3. Requuest a free API Key from endereco.de website (30 Days free trial)
-  4. Add the API Key to the Options Page to the Endereco Adress Validatio module
+  2. Install the plugin
+  3. Request a free API Key from endereco.de website (30 Days free trial)
+  4. Add the API Key to the Options Page to the Endereco Address Validation plugin
   5. Add the pageID of the pages, where the address-validation should be enabled
   6. Check the settings and services, that should be validated through our services.
   
