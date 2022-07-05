@@ -1,26 +1,52 @@
-# endereco-wp5-client
-Endereco Wordpress Client that adds address validation to Wordpress and WooCommerce.
+# Endereco Wordpress Client
 
-Compatibility Checks
-Compatible to
-  - Wordpress 5+6 
-  - Default WooCommmerce Checkout - V 6.6.1 (tested on 220701) (https://woocommerce.com)
-  - Checkout WC  V 7.3.X (tested on 220701) (https://www.checkoutwc.com)
-  - Works with Elementor https://elementor.com V3.6.6 ( tested on 220701)
-  
-   Installation: 
-  
-  1. Download the endereco-wp5-client Zip file and upload the module to your wordpress installation 
-  https://github.com/Endereco/endereco-wp5-client/releases/latest/
-  2. Install the plugin
-  
-  3. Request a free API Key from endereco.de website (30 Days free trial)
-  
-  4. Add the API Key to the Options Page to the Endereco Address Validation plugin
-  
-  5. Add the pageID of the pages, where the address-validation should be enabled  
-  (how to find the page id? https://www.sven-hoerig.de/ratgeber/wordpress-post-page-seiten-id-herausfinden/)
-  
-  6. Check the settings and services, that should be validated through our services.
-  
-  If you need more details on individual issues, please write us on support @ endereco . de
+## Installation
+
+Die Installation erfolgt in folgenden Schritten:
+
+1. Das Modul hier als ZIP herunterladen
+2. Das Modul im Wordpress Backend installieren und aktivieren (Plugins → installieren)
+3. Anschließend muss das Modul nur noch konfiguriert werden (Einstellungen → Endereco AMS)
+
+## Konfiguration des Moduls
+
+Als Erstes wird ein API-Key benötigt, um das Modul nutzen zu können. Diesen kann man [hier](https://www.endereco.de) beantragen
+
+### Endereco AMS auf folgenden Seiten einbauen. Id's kommagetrennt
+Hier müssen die Seitenids auf denen Endereco aktiv sein soll eingetragen werden, mit einem Komma getrennt (z. B. "8,9").
+</br>Diese ids findet man in der Url, sobald man diese Adresse bearbeitet. (z. B. post=2 → Seitenid: 2)
+
+### Adress-Services Konfiguration
+
+Hier kann man die Adressprüfung, Eingabe-Assistent und SmartAutocomplete aktivieren oder deaktivieren. Der SmartAutocomplete übernimmt automatisch den Vorschlag von Eingabe-Assistenten, wenn es nur einen Vorschlag gibt.
+
+Außerdem kann man einstellen, ob der User eine fehlerhafte Adresse mit einer zusätzlicher Checkbox bestätigen muss oder auch ob das Adressmodal, in der sich die Adressvorschläge befinden, geschlossen werden darf auch ohne Adressauswahl.
+
+### Name-Services Konfiguration
+Die Namensprüfung und auch das automatische Vertauschen des Vor- und Nachnamens lässt sich aktivieren oder deaktivieren
+
+### Rufnummernprüfung-Services Konfiguration
+
+Hier kann man die Rufnummernprüfung aktivieren oder deaktivieren. Ebenso, ob Statusmeldungen angezeigt werden sollen und auch in welchem Format die Telefonnummer erwartet wird
+
+### Email-Services Konfiguration
+
+Hier kann man die E-Mail-Prüfung aktivieren oder deaktivieren. Ebenso, wie bei der Rufnummernprüfung lassen sich die Statusmeldungen anzeigen oder nicht.
+
+### Designanpassungen
+
+Hier kann man sich entscheiden, ob man das Standard CSS nutzen möchte oder nicht
+
+### Entwicklereinstellungen
+
+#### Adressprüfung beim Absenden des Formulars auslösen
+Wenn aktiv, wird die Adresse geprüft, sobald das Formular abgeschickt wird
+
+#### Adressprüfung sofort nach Verlassen des Hausnummernfeldes auslösen
+Wenn aktiv wird die Adresse sofort geprüft, sobald die Adressfelder verlassen wurden
+
+#### Das Absenden des Formulars nach der Adressauswahl fortsetzen
+Wenn aktiv wird nach der Adressprüfung das Formular abgeschickt. Wenn es deaktiviert ist kann der User nochmal alle Daten in Ruhe anschauen und muss das Formular nochmal abschicken
+
+#### Debuginformationen in der Browserkonsole ausgeben
+Dabei werden zusätzlich Informationen in der Konsole ausgegeben
