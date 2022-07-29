@@ -1,14 +1,9 @@
 <?php
 // Config file.
 ?>
-<!-- general -->
-<script>
-
-</script>
 
 <!-- billing -->
 <script>
-<<<<<<< HEAD
 
     function waitForElementToDisplay(selector, callback, checkFrequencyInMs, timeoutInMs) {
         var startTimeInMs = Date.now();
@@ -74,41 +69,6 @@
         firstName: '[name="billing_first_name"]',
         lastName: '[name="billing_last_name"]',
         title: ''
-=======
-    enderecoInitAMS({
-        countryCode: '[name="billing_country"]',
-        postalCode: '[name="billing_postcode"]',
-        locality: '[name="billing_city"]',
-        streetFull: '[name="billing_address_1"]',
-        streetName: '',
-        buildingNumber: '',
-        additionalInfo: '[name="billing_address_2"]',
-        addressStatus: '',
-        addressTimestamp: '',
-        addressPredictions: '',
-        subdivisionCode: '[name="billing_state"]',
->>>>>>> dev_mail_phone_person_check
-    }, {
-        name: 'billing'
-    });
-
-    enderecoInitEmailServices(
-        'billing_email'
-        , {
-            name: 'billing'
-        });
-
-    enderecoInitPhoneServices({
-        phone: '[name="billing_phone"]'
-    }, {
-        name: 'billing'
-    });
-
-    enderecoInitPersonServces({
-        salutation: '',
-        firstName: '[name="billing_first_name"]',
-        lastName: '[name="billing_last_name"]',
-        title: ''
     }, {
         name: 'billing'
     });
@@ -128,7 +88,6 @@
 
 <!-- shipping -->
 <script>
-<<<<<<< HEAD
 
     waitForElementToDisplay("#shipping_street_name",function(){
         if (!document.getElementById('shipping_street_name').parentElement.parentElement.classList.contains('cfw-hidden')) {
@@ -177,20 +136,6 @@
         firstName: '[name="shipping_first_name"]',
         lastName: '[name="shipping_last_name"]',
         title: ''
-=======
-    enderecoInitAMS({
-        countryCode: '[name="shipping_country"]',
-        postalCode: '[name="shipping_postcode"]',
-        locality: '[name="shipping_city"]',
-        streetFull: '[name="shipping_address_1"]',
-        streetName: '',
-        buildingNumber: '',
-        additionalInfo: '[name="shipping_address_2"]',
-        addressStatus: '',
-        addressTimestamp: '',
-        addressPredictions: '',
-        subdivisionCode: '[name="shipping_state"]',
->>>>>>> dev_mail_phone_person_check
     }, {
         name: 'shipping'
     });
@@ -201,24 +146,6 @@
         name: 'shipping'
     });
 
-<<<<<<< HEAD
-=======
-    enderecoInitPersonServces({
-        salutation: '',
-        firstName: '[name="shipping_first_name"]',
-        lastName: '[name="shipping_last_name"]',
-        title: ''
-    }, {
-        name: 'shipping'
-    });
-
-    enderecoInitEmailServices(
-        'shipping_email'
-    , {
-        name: 'shipping'
-    });
-
->>>>>>> dev_mail_phone_person_check
     enderecoInitPhoneServices({
         phone: '[name="shipping_phone"]'
     }, {
