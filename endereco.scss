@@ -8,14 +8,47 @@ div.endereco-modal__footer>button {
 	display: inline-block;
 	text-align: center;
 	word-break: break-word;
-	background-color: var(--wp--preset--color--primary);
-	color: #fff;
-	border: 1px solid var(--wp--preset--color--black);
-	padding: 1rem 0.5em;
+	padding: 19px 10px;
 	margin-top: 1rem;
 	text-decoration: none;
-	font-size: medium;
+	font-size: 1em;
 	cursor: pointer;
+	box-sizing: border-box;
+	font-weight: 400;
+	transition: all .3s ease-in-out;
+
+	&:disabled {
+		background-color: #fff !important;
+		background-image: linear-gradient(to bottom, #fff 0%, #f8f8fa 100%) !important;
+		border: 1px solid #dadae5 !important;
+		color: #5f7285 !important;
+		cursor: not-allowed !important;
+	}
+}
+
+body.checkout-wc>div.endereco-popup-container>div.endereco-modal>div.endereco-modal__footer>button[endereco-edit-address=""],
+body.checkout-wc>div.endereco-popup-container>div.endereco-modal>div.endereco-modal__footer>button[endereco-use-selection=""]{
+	background: var(--cfw-buttons-primary-background-color);
+	color: var(--cfw-buttons-primary-text-color);
+	border: 1px solid var(--cfw-buttons-primary-background-color);
+
+	&:hover {
+		background: var(--cfw-buttons-primary-hover-background-color);
+		border-color: var(--cfw-buttons-primary-hover-background-color);
+		color: var(--cfw-buttons-primary-hover-text-color);
+	}
+}
+
+body.checkout-wc>div.endereco-popup-container>div.endereco-modal>div.endereco-modal__footer>button[endereco-confirm-address=''] {
+	background: var(--cfw-buttons-secondary-background-color);
+	border: 1px solid var(--cfw-buttons-secondary-background-color);
+	color: var(--cfw-buttons-secondary-text-color);
+
+	&:hover {
+		background: var(--cfw-buttons-secondary-hover-background-color);
+		border-color: var(--cfw-buttons-secondary-hover-background-color);
+		color: var(--cfw-buttons-secondary-hover-text-color);
+	}
 }
 
 .endereco-address-predictions__label {
@@ -23,26 +56,69 @@ div.endereco-modal__footer>button {
 	padding-left: 60px !important;
 }
 
-.endereco-s--email_not_correct>input,
-.endereco-s--phone_format_needs_correction>input,
-.endereco-s--locality_needs_correction>input,
-.endereco-s--postal_code_needs_correction>input,
-.endereco-s--street_full_needs_correction>input,
-.endereco-s--phone_invalid>input,
-.endereco-s--first_name_needs_correction>input,
-.endereco-s--last_name_needs_correction>input
-{
-	background-color: indianred;
+.woocommerce-billing-fields>div.cfw-input-wrap-row>p>span.endereco-s,
+.woocommerce-shipping-fields>div.cfw-input-wrap-row>p>span.endereco-s {
+	&--customer_verified,
+	&--salutation_correct,
+	&--first_name_correct,
+	&--last_name_correct,
+	&--title_correct,
+	&--email_correct,
+	&--address_correct,
+	&--postal_code_correct,
+	&--locality_correct,
+	&--street_name_correct,
+	&--street_full_correct,
+	&--building_number_correct,
+	&--additional_info_correct,
+	&--country_code_correct,
+	&--subdivision_code_correct,
+	&--phone_correct {
+		.input-text,
+		select,
+		.form-control,
+		.btn {
+			border: 1px solid #3FA33F !important;
+			background-color: #f8fcf8;
+		}
+	}
+
+	&--salutation_needs_correction,
+	&--first_name_needs_correction,
+	&--last_name_needs_correction,
+	&--title_needs_correction,
+	&--email_not_correct,
+	&--address_needs_correction,
+	&--address_multiple_variants,
+	&--address_not_found,
+	&--postal_code_needs_correction,
+	&--locality_needs_correction,
+	&--street_name_needs_correction,
+	&--street_full_needs_correction,
+	&--building_number_needs_correction,
+	&--additional_info_needs_correction,
+	&--country_code_needs_correction,
+	&--subdivision_code_needs_correction,
+	&--phone_invalid,
+	&--phone_needs_correction {
+		.input-text.input-text.input-text.input-text.input-text,
+		select,
+		.form-control,
+		.btn {
+			border: 1px solid #EB9E3E !important;
+			background-color: #fefbf8;
+		}
+
+		&.radio-inline  {
+			border-bottom: 2px dotted rgb(240, 173, 78);
+		}
+	}
 }
 
-.endereco-s--email_correct>input,
-.endereco-s--phone_correct>input,
-.endereco-s--locality_correct>input,
-.endereco-s--postal_code_correct>input,
-.endereco-s--street_full_correct>input,
-.endereco-s--phone_correct>input,
-.endereco-s--first_name_correct>input,
-.endereco-s--last_name_correct>input
-{
-	background-color: lightgreen;
+div.endereco-status-wrapper{
+	margin-top: 1rem;
+}
+
+p.address-field>span.woocommerce-input-wrapper>input.input-text {
+	display: inline;
 }

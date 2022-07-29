@@ -19,13 +19,12 @@ function ewp5c_add_bundle_to_footer() {
     // Display only in checkout or address pages.
     if (
         function_exists( 'is_checkout' ) && is_checkout() ||
-        function_exists( 'is_wc_endpoint_url' ) && is_wc_endpoint_url( 'edit-address' ) && !empty($_GET['edit-address']) ||
+        function_exists( 'is_wc_endpoint_url' ) && is_wc_endpoint_url( 'edit-address' ) ||
         ewp5c_is_whitelisted_page()
     ) {
         $url = plugin_dir_url( __FILE__ ) . 'assets/js/endereco.min.js';
         include 'chunks/bundle.php';
     }
-
 }
 add_action( 'wp_footer', 'ewp5c_add_bundle_to_footer' );
 
@@ -35,7 +34,7 @@ function ewp5c_add_config_to_header() {
     // Display only in checkout or address pages.
     if (
         function_exists( 'is_checkout' ) && is_checkout() ||
-        function_exists( 'is_wc_endpoint_url' ) && is_wc_endpoint_url( 'edit-address' ) && !empty($_GET['edit-address']) ||
+        function_exists( 'is_wc_endpoint_url' ) && is_wc_endpoint_url( 'edit-address' ) ||
         ewp5c_is_whitelisted_page()
     ) {
         include 'chunks/config.php';
@@ -43,7 +42,7 @@ function ewp5c_add_config_to_header() {
 
     if (
         function_exists( 'is_checkout' ) && is_checkout() ||
-        function_exists( 'is_wc_endpoint_url' ) && is_wc_endpoint_url( 'edit-address' ) && !empty($_GET['edit-address'])
+        function_exists( 'is_wc_endpoint_url' ) && is_wc_endpoint_url( 'edit-address' )
     ) {
         include 'chunks/defaultInitAms.php';
     }

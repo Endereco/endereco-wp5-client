@@ -56,6 +56,15 @@ EnderecoIntegrator.resolvers.countryCodeSetValue = function (subscriber, value) 
         subscriber.object.value = value;
     }
 }
+EnderecoIntegrator.resolvers.subdivisionCodeSetValue = function (subscriber, value) {
+    if (
+        !!jQuery
+    ) {
+        jQuery(subscriber.object).val(value).trigger('change');
+    } else {
+        subscriber.object.value = value;
+    }
+}
 EnderecoIntegrator.resolvers.countryCodeRead = function (value) {
     return new Promise(function (resolve, reject) {
         resolve(value.toUpperCase());
