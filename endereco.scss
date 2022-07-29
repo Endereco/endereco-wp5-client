@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 @import './node_modules/@endereco/js-sdk/themes/default-theme.scss';
+=======
+@import "../js-sdk/themes/default-theme";
+>>>>>>> dev_mail_phone_person_check
 
 .woocommerce-input-wrapper {
 	position: relative;
@@ -8,6 +12,7 @@ div.endereco-modal__footer>button {
 	display: inline-block;
 	text-align: center;
 	word-break: break-word;
+<<<<<<< HEAD
 	padding: 19px 10px;
 	margin-top: 1rem;
 	text-decoration: none;
@@ -49,6 +54,16 @@ body.checkout-wc>div.endereco-popup-container>div.endereco-modal>div.endereco-mo
 		border-color: var(--cfw-buttons-secondary-hover-background-color);
 		color: var(--cfw-buttons-secondary-hover-text-color);
 	}
+=======
+	background-color: var(--wp--preset--color--primary);
+	color: #fff;
+	border: 1px solid var(--wp--preset--color--black);
+	padding: 1rem 0.5em;
+	margin-top: 1rem;
+	text-decoration: none;
+	font-size: medium;
+	cursor: pointer;
+>>>>>>> dev_mail_phone_person_check
 }
 
 .endereco-address-predictions__label {
@@ -56,6 +71,7 @@ body.checkout-wc>div.endereco-popup-container>div.endereco-modal>div.endereco-mo
 	padding-left: 60px !important;
 }
 
+<<<<<<< HEAD
 .woocommerce-billing-fields>div.cfw-input-wrap-row>p>span.endereco-s,
 .woocommerce-shipping-fields>div.cfw-input-wrap-row>p>span.endereco-s {
 	&--customer_verified,
@@ -121,4 +137,28 @@ div.endereco-status-wrapper{
 
 p.address-field>span.woocommerce-input-wrapper>input.input-text {
 	display: inline;
+=======
+.endereco-s--email_not_correct>input,
+.endereco-s--phone_format_needs_correction>input,
+.endereco-s--locality_needs_correction>input,
+.endereco-s--postal_code_needs_correction>input,
+.endereco-s--street_full_needs_correction>input,
+.endereco-s--phone_invalid>input,
+.endereco-s--first_name_needs_correction>input,
+.endereco-s--last_name_needs_correction>input
+{
+	background-color: indianred;
+}
+
+.endereco-s--email_correct>input,
+.endereco-s--phone_correct>input,
+.endereco-s--locality_correct>input,
+.endereco-s--postal_code_correct>input,
+.endereco-s--street_full_correct>input,
+.endereco-s--phone_correct>input,
+.endereco-s--first_name_correct>input,
+.endereco-s--last_name_correct>input
+{
+	background-color: lightgreen;
+>>>>>>> dev_mail_phone_person_check
 }
