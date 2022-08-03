@@ -153,6 +153,10 @@ function ewp5c_register_settings() {
     add_option( 'ewp5c_show_debug', '0');
     register_setting( 'ewp5c_options_group', 'ewp5c_show_debug' );
 
+    // split street
+    add_option( 'ewp5c_activate_split_street', '0');
+    register_setting( 'ewp5c_options_group', 'ewp5c_activate_split_street' );
+
 }
 add_action( 'admin_init', 'ewp5c_register_settings' );
 
