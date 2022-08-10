@@ -46,17 +46,9 @@ $connection = ewp5c_connection_works();
 				<th scope="row"><label for="ewp5c_activate_ams"><?php _e('Adressprüfung und Eingabe-Assistent aktivieren', 'endereco-wp5-client'); ?></label></th>
 				<td><input type="checkbox" id="ewp5c_activate_ams" name="ewp5c_activate_ams" value="1" <?php if (1 === intval(get_option('ewp5c_activate_ams'))) : ?>checked <?php endif; ?>" /></td>
 			</tr>
-            <tr valign="top">
-                <th scope="row"><label for="ewp5c_activate_split_street"><?php _e('Straße in Straßenname und Hausnummer unterteilen ', 'endereco-wp5-client'); ?></label></th>
-                <td><input type="checkbox" id="ewp5c_activate_split_street" name="ewp5c_activate_split_street" value="1" <?php if (1 === intval(get_option('ewp5c_activate_split_street'))) : ?>checked <?php endif; ?>" /></td>
-            </tr>
 			<tr valign="top">
 				<th scope="row"><label for="ewp5c_allow_close_modal"><?php _e('Das Schließen des Modals erlauben', 'endereco-wp5-client'); ?></label></th>
 				<td><input type="checkbox" id="ewp5c_allow_close_modal" name="ewp5c_allow_close_modal" value="1" <?php if (1 === intval(get_option('ewp5c_allow_close_modal'))) : ?>checked <?php endif; ?>" /></td>
-			</tr>
-			<tr valign="top">
-				<th scope="row"><label for="ewp5c_allow_smart_autocomplete"><?php _e('Felder bei nur einem verbleibenden Adressvorschlag automatisch ausfüllen (SmartAutocomplete)', 'endereco-wp5-client'); ?></label></th>
-				<td><input type="checkbox" id="ewp5c_allow_smart_autocomplete" name="ewp5c_allow_smart_autocomplete" value="1" <?php if (1 === intval(get_option('ewp5c_allow_smart_autocomplete'))) : ?>checked <?php endif; ?>" /></td>
 			</tr>
 			<tr valign="top">
 				<th scope="row"><label for="ewp5c_allow_demand_address_confirmation"><?php _e('Kunde muss eine fehlerhafte Adresse mit einer Checkbox bestätigen', 'endereco-wp5-client'); ?></label></th>
@@ -132,10 +124,6 @@ $connection = ewp5c_connection_works();
 			<tr>
 				<th scope="row"><label for="ewp5c_resume_after_submit"><?php _e('Das Absenden des Formulars nach der Adressauswahl fortsetzen', 'endereco-wp5-client'); ?></label></th>
 				<td><input type="checkbox" id="ewp5c_resume_after_submit" name="ewp5c_resume_after_submit" value="1" <?php if (1 === intval(get_option('ewp5c_resume_after_submit'))) : ?>checked <?php endif; ?>" /></td>
-			</tr>
-			<tr>
-				<th scope="row"><label for="ewp5c_show_debug"><?php _e('Debuginformationen in der Browserkonsole ausgeben', 'endereco-wp5-client'); ?></label></th>
-				<td><input type="checkbox" id="ewp5c_show_debug" name="ewp5c_show_debug" value="1" <?php if (1 === intval(get_option('ewp5c_show_debug'))) : ?>checked <?php endif; ?>" /></td>
 			</tr>
 		</table>
         <?php  submit_button(); ?>

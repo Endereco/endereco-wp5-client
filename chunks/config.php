@@ -66,12 +66,12 @@
         window.EnderecoIntegrator.config.agentName = '<?php echo ENDERECO_CLIENT_NAME .' v' . ENDERECO_CLIENT_VERSION; ?>';
         window.EnderecoIntegrator.config.apiUrl = atob('<?php echo base64_encode(plugin_dir_url(  dirname(__DIR__) . '/io.php' ) . 'io.php'); ?>');
         window.EnderecoIntegrator.config.apiKey = '<?php echo get_option('ewp5c_api_key'); ?>'; // Hier kommt Dein API Key.
-        window.EnderecoIntegrator.config.showDebugInfo = !!('<?php echo get_option('ewp5c_show_debug'); ?>');
-        window.EnderecoIntegrator.config.splitStreet = !!('<?php echo get_option('ewp5c_activate_split_street'); ?>');
+        window.EnderecoIntegrator.config.showDebugInfo = false;
+        window.EnderecoIntegrator.config.splitStreet = false;
         window.EnderecoIntegrator.config.remoteApiUrl = atob('<?php echo base64_encode(get_option('ewp5c_api_endpoint_url')); ?>');
         window.EnderecoIntegrator.config.trigger.onblur = !!('<?php echo get_option('ewp5c_trigger_on_blur'); ?>');
         window.EnderecoIntegrator.config.trigger.onsubmit = !!('<?php echo get_option('ewp5c_trigger_on_submit'); ?>');
-        window.EnderecoIntegrator.config.ux.smartFill = !!('<?php echo get_option('ewp5c_allow_smart_autocomplete'); ?>');;
+        window.EnderecoIntegrator.config.ux.smartFill = false;
         window.EnderecoIntegrator.config.ux.checkExisting = false;
         window.EnderecoIntegrator.config.ux.resumeSubmit = !!('<?php echo get_option('ewp5c_resume_after_submit'); ?>');
         window.EnderecoIntegrator.config.ux.useStandardCss = !!('<?php echo get_option('ewp5c_use_standard_css'); ?>');
