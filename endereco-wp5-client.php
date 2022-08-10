@@ -41,7 +41,16 @@ function ewp5c_add_config_to_header() {
     }
 
     if (
-        function_exists( 'is_checkout' ) && is_checkout() ||
+        function_exists( 'is_checkout' ) && is_checkout()
+    ) {
+        if (is_plugin_active('checkout-for-woocommerce/checkout-for-woocommerce.php')) {
+            include 'chunks/wcCheckoutInitAms.php';
+        } else {
+            include 'chunks/defaultInitAms.php';
+        }
+    }
+
+    if (
         function_exists( 'is_wc_endpoint_url' ) && is_wc_endpoint_url( 'edit-address' )
     ) {
         include 'chunks/defaultInitAms.php';
@@ -194,6 +203,8 @@ function ewp5c_settings_link( $links ) {
 
 add_action( 'woocommerce_after_save_address_validation', 'ewp5c_find_and_close_sessions' );
 add_action( 'wc_ajax_checkout', 'ewp5c_find_and_close_sessions');
+add_action( 'cfw_before_process_checkout', 'ewp5c_find_and_close_sessions');
+
 function ewp5c_find_and_close_sessions() {
     $sApiKy = get_option('ewp5c_api_key');
     $anyDoAccounting = false;
@@ -209,7 +220,7 @@ function ewp5c_find_and_close_sessions() {
                         'id' => 1,
                         'method' => 'doAccounting',
                         'params' => array(
-                            'sessionId' => $sSessionId
+                            'sessionId' => $sSessionId,
                         )
                     );
                     $newHeaders = array(

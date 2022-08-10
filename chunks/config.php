@@ -67,7 +67,7 @@
         window.EnderecoIntegrator.config.apiUrl = atob('<?php echo base64_encode(plugin_dir_url(  dirname(__DIR__) . '/io.php' ) . 'io.php'); ?>');
         window.EnderecoIntegrator.config.apiKey = '<?php echo get_option('ewp5c_api_key'); ?>'; // Hier kommt Dein API Key.
         window.EnderecoIntegrator.config.showDebugInfo = !!('<?php echo get_option('ewp5c_show_debug'); ?>');
-        window.EnderecoIntegrator.config.splitStreet = !!('<?php echo get_option('ewp5c_activate_split_street'); ?>');
+        window.EnderecoIntegrator.config.splitStreet = false;
         window.EnderecoIntegrator.config.remoteApiUrl = atob('<?php echo base64_encode(get_option('ewp5c_api_endpoint_url')); ?>');
         window.EnderecoIntegrator.config.trigger.onblur = !!('<?php echo get_option('ewp5c_trigger_on_blur'); ?>');
         window.EnderecoIntegrator.config.trigger.onsubmit = !!('<?php echo get_option('ewp5c_trigger_on_submit'); ?>');
