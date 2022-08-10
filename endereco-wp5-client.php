@@ -10,7 +10,7 @@ Version: 0.0.4
 Author URI: https://endereco.de/wordpress
 */
 
-define('ENDERECO_CLIENT_VERSION', '0.0.4');
+define('ENDERECO_CLIENT_VERSION', '0.0.5');
 define('ENDERECO_CLIENT_NAME', 'Endereco WordPress5 Client');
 
 function ewp5c_add_bundle_to_footer() {
