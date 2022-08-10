@@ -46,10 +46,6 @@ $connection = ewp5c_connection_works();
 				<th scope="row"><label for="ewp5c_activate_ams"><?php _e('Adressprüfung und Eingabe-Assistent aktivieren', 'endereco-wp5-client'); ?></label></th>
 				<td><input type="checkbox" id="ewp5c_activate_ams" name="ewp5c_activate_ams" value="1" <?php if (1 === intval(get_option('ewp5c_activate_ams'))) : ?>checked <?php endif; ?>" /></td>
 			</tr>
-            <tr valign="top">
-                <th scope="row"><label for="ewp5c_activate_split_street"><?php _e('Straße in Straßenname und Hausnummer unterteilen ', 'endereco-wp5-client'); ?></label></th>
-                <td><input type="checkbox" id="ewp5c_activate_split_street" name="ewp5c_activate_split_street" value="1" <?php if (1 === intval(get_option('ewp5c_activate_split_street'))) : ?>checked <?php endif; ?>" /></td>
-            </tr>
 			<tr valign="top">
 				<th scope="row"><label for="ewp5c_allow_close_modal"><?php _e('Das Schließen des Modals erlauben', 'endereco-wp5-client'); ?></label></th>
 				<td><input type="checkbox" id="ewp5c_allow_close_modal" name="ewp5c_allow_close_modal" value="1" <?php if (1 === intval(get_option('ewp5c_allow_close_modal'))) : ?>checked <?php endif; ?>" /></td>
