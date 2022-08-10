@@ -125,10 +125,6 @@ $connection = ewp5c_connection_works();
 				<th scope="row"><label for="ewp5c_resume_after_submit"><?php _e('Das Absenden des Formulars nach der Adressauswahl fortsetzen', 'endereco-wp5-client'); ?></label></th>
 				<td><input type="checkbox" id="ewp5c_resume_after_submit" name="ewp5c_resume_after_submit" value="1" <?php if (1 === intval(get_option('ewp5c_resume_after_submit'))) : ?>checked <?php endif; ?>" /></td>
 			</tr>
-			<tr>
-				<th scope="row"><label for="ewp5c_show_debug"><?php _e('Debuginformationen in der Browserkonsole ausgeben', 'endereco-wp5-client'); ?></label></th>
-				<td><input type="checkbox" id="ewp5c_show_debug" name="ewp5c_show_debug" value="1" <?php if (1 === intval(get_option('ewp5c_show_debug'))) : ?>checked <?php endif; ?>" /></td>
-			</tr>
 		</table>
         <?php  submit_button(); ?>
     </form>

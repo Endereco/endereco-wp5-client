@@ -153,10 +153,6 @@ function ewp5c_register_settings() {
     // Resume submit after the addresscheck.
     add_option( 'ewp5c_whitelisted_pages', '');
     register_setting( 'ewp5c_options_group', 'ewp5c_whitelisted_pages' );
-
-    // Show debug infos.
-    add_option( 'ewp5c_show_debug', '0');
-    register_setting( 'ewp5c_options_group', 'ewp5c_show_debug' );
 }
 add_action( 'admin_init', 'ewp5c_register_settings' );
 
