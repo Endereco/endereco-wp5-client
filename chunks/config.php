@@ -71,7 +71,7 @@
         window.EnderecoIntegrator.config.remoteApiUrl = atob('<?php echo base64_encode(get_option('ewp5c_api_endpoint_url')); ?>');
         window.EnderecoIntegrator.config.trigger.onblur = !!('<?php echo get_option('ewp5c_trigger_on_blur'); ?>');
         window.EnderecoIntegrator.config.trigger.onsubmit = !!('<?php echo get_option('ewp5c_trigger_on_submit'); ?>');
-        window.EnderecoIntegrator.config.ux.smartFill = !!('<?php echo get_option('ewp5c_allow_smart_autocomplete'); ?>');;
+        window.EnderecoIntegrator.config.ux.smartFill = false;
         window.EnderecoIntegrator.config.ux.checkExisting = false;
         window.EnderecoIntegrator.config.ux.resumeSubmit = !!('<?php echo get_option('ewp5c_resume_after_submit'); ?>');
         window.EnderecoIntegrator.config.ux.useStandardCss = !!('<?php echo get_option('ewp5c_use_standard_css'); ?>');

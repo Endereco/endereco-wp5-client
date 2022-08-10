@@ -51,10 +51,6 @@ $connection = ewp5c_connection_works();
 				<td><input type="checkbox" id="ewp5c_allow_close_modal" name="ewp5c_allow_close_modal" value="1" <?php if (1 === intval(get_option('ewp5c_allow_close_modal'))) : ?>checked <?php endif; ?>" /></td>
 			</tr>
 			<tr valign="top">
-				<th scope="row"><label for="ewp5c_allow_smart_autocomplete"><?php _e('Felder bei nur einem verbleibenden Adressvorschlag automatisch ausfüllen (SmartAutocomplete)', 'endereco-wp5-client'); ?></label></th>
-				<td><input type="checkbox" id="ewp5c_allow_smart_autocomplete" name="ewp5c_allow_smart_autocomplete" value="1" <?php if (1 === intval(get_option('ewp5c_allow_smart_autocomplete'))) : ?>checked <?php endif; ?>" /></td>
-			</tr>
-			<tr valign="top">
 				<th scope="row"><label for="ewp5c_allow_demand_address_confirmation"><?php _e('Kunde muss eine fehlerhafte Adresse mit einer Checkbox bestätigen', 'endereco-wp5-client'); ?></label></th>
 				<td><input type="checkbox" id="ewp5c_allow_demand_address_confirmation" name="ewp5c_allow_demand_address_confirmation" value="1" <?php if (1 === intval(get_option('ewp5c_allow_demand_address_confirmation'))) : ?>checked <?php endif; ?>" /></td>
 			</tr>

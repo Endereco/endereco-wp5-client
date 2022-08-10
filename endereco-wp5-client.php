@@ -102,10 +102,6 @@ function ewp5c_register_settings() {
     add_option( 'ewp5c_preselect_country', '0');
     register_setting( 'ewp5c_preselect_country', 'ewp5c_preselect_country' );
 
-    // SmartAutocomplete
-    add_option( 'ewp5c_allow_smart_autocomplete', '1');
-    register_setting( 'ewp5c_options_group', 'ewp5c_allow_smart_autocomplete' );
-
     // Demand confirmation of falty address.
     add_option( 'ewp5c_allow_demand_address_confirmation', '0');
     register_setting( 'ewp5c_options_group', 'ewp5c_allow_demand_address_confirmation' );
