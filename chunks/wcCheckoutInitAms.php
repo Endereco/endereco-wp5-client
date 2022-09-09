@@ -141,8 +141,12 @@
                 // Add address check trigger.
                 var submitButton;
                 setInterval(function() {
-                    submitButton = document.querySelector($fields['countryCode']).form.querySelector('[type=submit]');
-                    if (!submitButton.hasAttribute('endereco-attached-click-listener-for-'+addressFieldSet.groupName)) {
+                    var countryCode = document.querySelector($fields['countryCode']);
+                    if (!countryCode || !countryCode.form) {
+                        return;
+                    }
+                    submitButton = countryCode.form.querySelector('[type=submit]');
+                    if (!!submitButton && !submitButton.hasAttribute('endereco-attached-click-listener-for-'+addressFieldSet.groupName)) {
                         submitButton.addEventListener('click', function(e) {
                             console.log();
                             if ('billing_address' === EAO.addressType
