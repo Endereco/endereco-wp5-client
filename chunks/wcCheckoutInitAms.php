@@ -148,22 +148,31 @@
                     submitButton = countryCode.form.querySelector('[type=submit]');
                     if (!!submitButton && !submitButton.hasAttribute('endereco-attached-click-listener-for-'+addressFieldSet.groupName)) {
                         submitButton.addEventListener('click', function(e) {
-                            console.log();
-                            if ('billing_address' === EAO.addressType
-                                && 'different_from_shipping' === document.querySelector('[name="bill_to_different_address"]:checked').value
+                            var billToDifferentAddress = false;
+                            var addresType = EAO.addressType;
+                            if (!document.querySelector('[name="bill_to_different_address"]:checked')) {
+                                EAO.addressType = 'general_address';
+                                addresType = 'general_address';
+                                billToDifferentAddress = false;
+                            } else {
+                                billToDifferentAddress = 'different_from_shipping' === document.querySelector('[name="bill_to_different_address"]:checked').value
+                            }
+
+                            if ('billing_address' === addresType
+                                && billToDifferentAddress
                             ) {
                                 if (EAO.util.shouldBeChecked()) {
                                     EAO.util.checkAddress();
                                     e.preventDefault();
                                     return false;
                                 }
-                            } else if ('shipping_address' === EAO.addressType) {
+                            } else if ('shipping_address' === addresType) {
                                 if (EAO.util.shouldBeChecked()) {
                                     EAO.util.checkAddress();
                                     e.preventDefault();
                                     return false;
                                 }
-                            } else if ('general_address' === EAO.addressType) {
+                            } else if ('general_address' === addresType) {
                                 if (EAO.util.shouldBeChecked()) {
                                     EAO.util.checkAddress();
                                     e.preventDefault();
