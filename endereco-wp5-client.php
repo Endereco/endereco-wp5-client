@@ -6,11 +6,11 @@ Description: Internationale Adressprüfungen für WordPress (WooCommerce)
 Text Domain: endereco-wp5-client
 Domain Path: /translations
 Author: Ilja Weber
-Version: 0.0.6
+Version: 0.1.0
 Author URI: https://endereco.de/wordpress
 */
 
-define('ENDERECO_CLIENT_VERSION', '0.0.6');
+define('ENDERECO_CLIENT_VERSION', '0.1.0');
 define('ENDERECO_CLIENT_NAME', 'Endereco WordPress5 Client');
 
 function ewp5c_add_bundle_to_footer() {
@@ -22,8 +22,11 @@ function ewp5c_add_bundle_to_footer() {
         function_exists( 'is_wc_endpoint_url' ) && is_wc_endpoint_url( 'edit-address' ) ||
         ewp5c_is_whitelisted_page()
     ) {
-        $url = plugin_dir_url( __FILE__ ) . 'assets/js/endereco.min.js';
+        $url = plugin_dir_url( __FILE__ ) . 'assets/endereco.min.js'; // JS file JS-SDK Version 1.8.0
         include 'chunks/bundle.php';
+        // add css to header
+        $css_url = plugin_dir_url( __FILE__ ) . 'assets/endereco.min.css'; // CSS file JS-SDK Version 1.8.0
+        wp_enqueue_style( 'endereco-style', $css_url ); // Enqueue the CSS file
     }
 }
 add_action( 'wp_footer', 'ewp5c_add_bundle_to_footer' );
